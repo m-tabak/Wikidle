@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Parent>
+  <element>
+    <node type="empty"></node>
+  </element>
+  <text>1</text>
+  <text>2</text>
+  <anotherText>3</anotherText>
+</Parent>

@@ -9,7 +9,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WikiDataExtractor", "WikiDa
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{8929B470-FDA1-4683-AC4C-4DCA5844A3C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WikiDataExtractor.Tests", "Tests\WikiDataExtractor.Tests\WikiDataExtractor.Tests.csproj", "{B125C6E4-12CA-4CAD-B43F-2B6B90694F06}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WikiDataExtractor.Tests", "Tests\WikiDataExtractor.Tests\WikiDataExtractor.Tests.csproj", "{B125C6E4-12CA-4CAD-B43F-2B6B90694F06}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Util", "Util", "{0B7B2420-8A13-489A-B2F2-08BC526F8843}"
+	ProjectSection(SolutionItems) = preProject
+		Tests\WikiDataExtractor.Tests\ResourceReader.cs = Tests\WikiDataExtractor.Tests\ResourceReader.cs
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +40,7 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{B125C6E4-12CA-4CAD-B43F-2B6B90694F06} = {8929B470-FDA1-4683-AC4C-4DCA5844A3C1}
+		{0B7B2420-8A13-489A-B2F2-08BC526F8843} = {8929B470-FDA1-4683-AC4C-4DCA5844A3C1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {32534584-3B40-461A-B93B-C9911C68ADC5}
