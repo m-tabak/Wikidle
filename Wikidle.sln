@@ -5,7 +5,11 @@ VisualStudioVersion = 17.10.35004.147
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WikidleBackend", "WikidleBackend\WikidleBackend.csproj", "{B2AE6EA0-C565-4F8A-92DD-60A61923DF75}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WikiDataExtractor", "WikiDataExtractor\WikiDataExtractor.csproj", "{67DE1C31-7E56-410F-8125-24A1E1D1E2F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WikiDataExtractor", "WikiDataExtractor\WikiDataExtractor.csproj", "{67DE1C31-7E56-410F-8125-24A1E1D1E2F4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{8929B470-FDA1-4683-AC4C-4DCA5844A3C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WikiDataExtractor.Tests", "Tests\WikiDataExtractor.Tests\WikiDataExtractor.Tests.csproj", "{B125C6E4-12CA-4CAD-B43F-2B6B90694F06}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +25,16 @@ Global
 		{67DE1C31-7E56-410F-8125-24A1E1D1E2F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67DE1C31-7E56-410F-8125-24A1E1D1E2F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67DE1C31-7E56-410F-8125-24A1E1D1E2F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B125C6E4-12CA-4CAD-B43F-2B6B90694F06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B125C6E4-12CA-4CAD-B43F-2B6B90694F06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B125C6E4-12CA-4CAD-B43F-2B6B90694F06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B125C6E4-12CA-4CAD-B43F-2B6B90694F06}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B125C6E4-12CA-4CAD-B43F-2B6B90694F06} = {8929B470-FDA1-4683-AC4C-4DCA5844A3C1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {32534584-3B40-461A-B93B-C9911C68ADC5}
