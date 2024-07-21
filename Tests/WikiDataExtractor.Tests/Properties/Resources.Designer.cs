@@ -61,6 +61,24 @@ namespace WikiDataExtractor.Tests.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {{Infobox settlement
+        ///| name                            = Warsaw
+        ///| native_name                     = &amp;lt;small&amp;gt;&apos;&apos;Warszawa&apos;&apos;&amp;lt;/small&amp;gt;
+        ///| native_name_lang                = pl
+        ///| settlement_type                 = [[City with powiat rights|Capital city and county]]
+        ///| image_skyline                   = {{Photomontage|
+        /// |color=#ffffff
+        /// |photo1a = Aleja Niepdleglosci Warsaw 2022 aerial (cropped).jpg
+        /// |photo2a = Pałac Na Wyspie w Warszawie, widok na elewację południową.jpg
+        /// |photo2b = Poland-00808 - Castle Squa [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string wikitext1 {
+            get {
+                return ResourceManager.GetString("wikitext1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
         ///&lt;Parent&gt;
         ///  &lt;element&gt;

@@ -1,7 +1,7 @@
 ﻿using WikiDataExtractor.Data;
 using WikiDataExtractor.Tests.Util;
 
-namespace WikiDataExtractor.Tests
+namespace WikiDataExtractor.Tests.Data
 {
     public class XmlParser_ReadTextNodesAsync
     {

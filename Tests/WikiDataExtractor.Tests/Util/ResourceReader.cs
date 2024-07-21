@@ -15,5 +15,12 @@ namespace WikiDataExtractor.Tests.Util
             byte[] data = Encoding.UTF8.GetBytes(text);
             return new MemoryStream(data);
         }
+
+        internal static string ReadTextRes(string resourceName)
+        {
+            string? text = WikiDataExtractor.Tests.Properties.Resources.ResourceManager.GetString(resourceName);
+            if (text == null) throw new FileNotFoundException($"String resource : {resourceName}");
+            return text;
+        }
     }
 }
