@@ -2,10 +2,8 @@
 {
     internal class Element
     {
-        internal int StartTokenIndex;
-        internal int EndTokenIndex;
         internal string Name = "";
-        internal string Text = "";
+        internal string Content = "";
         internal int Level;
         internal Element? Parent;
         internal List<Element> Children = [];
