@@ -70,11 +70,25 @@ namespace WikiDataExtractor.Tests.Properties {
         /// |color=#ffffff
         /// |photo1a = Aleja Niepdleglosci Warsaw 2022 aerial (cropped).jpg
         /// |photo2a = Pałac Na Wyspie w Warszawie, widok na elewację południową.jpg
-        /// |photo2b = Poland-00808 - Castle Squa [rest of string was truncated]&quot;;.
+        /// |photo2b = Poland-00808 - Ca [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string wikitext1 {
             get {
                 return ResourceManager.GetString("wikitext1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {{For|the name of Warsaw in various languages|wikt:Warsaw}}
+        ///
+        ///== Geography ==
+        ///Warsaw is near the middle of Poland on both sides of the Vistula [[river]], and about 350 [[kilometre|km]] (225 [[mile]]s) from the [[Baltic Sea]]. It is about 100 [[metre|m]] (325 [[Foot (unit of length)|ft]]) above [[sea level]]. Warsaw has a [[humid continental climate]] (&apos;&apos;Dfb&apos;&apos; in the [[Koeppen climate classification]]).
+        ///
+        ///Warsaw is home to four [[university|universities]] and 62 [[college]]s, and many [[theatre]]s and art [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string wikitext2 {
+            get {
+                return ResourceManager.GetString("wikitext2", resourceCulture);
             }
         }
         

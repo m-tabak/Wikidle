@@ -2,6 +2,7 @@
 using System.Text.RegularExpressions;
 using static System.Net.Mime.MediaTypeNames;
 using System.Xml.Linq;
+using System.Web;
 
 namespace WikiDataExtractor.Wikipedia
 {
@@ -15,11 +16,34 @@ namespace WikiDataExtractor.Wikipedia
         /// <param name="startTag">What marks the start of the element.</param>
         /// <param name="endTag">What marks the end of the element.</param>
         /// <returns>A collection of all elements found.</returns>
-        internal static List<Element> Parse(string rawText, string startTag, string endTag)
+        internal static List<Element> Parse(
+            string rawText,
+            string startTag,
+            string endTag
+            )
+        {
+            return ParseAndFormat(rawText, startTag, endTag, e => "", out _);
+        }
+
+        /// <summary>
+        /// Parse text for elements between two tags. And replace the elements according to a function.
+        /// </summary>
+        /// <param name="rawText">The text to process.</param>
+        /// <param name="startTag">What marks the start of the element.</param>
+        /// <param name="endTag">What marks the end of the element.</param>
+        /// <param name="formatter">The function to selects first level elements and replaces it with different text.</param>
+        /// <param name="formattedText">The result text.</param>
+        /// <returns>A collection of all elements found.</returns>
+        internal static List<Element> ParseAndFormat(
+            string rawText,
+            string startTag,
+            string endTag,
+            Func<Element, string> formatter,
+            out string formattedText)
         {
             var segments = Regex.Split(rawText, $"({Regex.Escape(startTag)})|({Regex.Escape(endTag)})");
-
             List<Element> result = [];
+            formattedText = "";
             Element? currentElement = null;
             string prevSegment = "";
             foreach (var segment in segments)
@@ -56,6 +80,7 @@ namespace WikiDataExtractor.Wikipedia
                         if (currentElement.Level == 1)
                         {
                             result.Add(currentElement);
+                            formattedText += formatter(currentElement);
                             currentElement = null;
                         }
                         else
@@ -64,7 +89,16 @@ namespace WikiDataExtractor.Wikipedia
                         }
                     }
                 }
-
+                else
+                {
+                    if (segment != startTag)
+                    {
+                        if (currentElement == null)
+                            formattedText += segment;
+                        else
+                            currentElement.Content += segment;
+                    }
+                }
                 prevSegment = segment;
             }
 
@@ -76,8 +110,8 @@ namespace WikiDataExtractor.Wikipedia
             string name = "";
             if (elementText.Contains('|'))
             {
-                name = Regex.Match(elementText, @"^.+(?=\|)").Value.Trim();
-                content = Regex.Match(elementText, @"(?:(\|).+)").Value;
+                name = Regex.Match(elementText, @"^[^/|]*", RegexOptions.Singleline).Value.Trim();
+                content = Regex.Match(elementText, @"(?:(\|).+)",RegexOptions.Singleline).Value;
             }
             else
             {
