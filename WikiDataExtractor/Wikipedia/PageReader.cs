@@ -22,12 +22,14 @@ namespace WikiDataExtractor.Wikipedia
             // In the process extract Infoboxes and the filenames in them.
             string templateSelector(Element t)
             {
-                if (t.Name.StartsWith("infobox", StringComparison.OrdinalIgnoreCase))
+                if (t.Name.StartsWith("infobox", StringComparison.OrdinalIgnoreCase) 
+                    || t.Name.StartsWith("taxobox", StringComparison.OrdinalIgnoreCase))
                 {
                     infoboxes.Add(t);
                     files = files.Concat(ExtractFilenames(t.Content));
                     var photomontage = t.Children.FirstOrDefault(i =>
-                    i.Name.StartsWith("photomontage", StringComparison.OrdinalIgnoreCase));
+                    i.Name.StartsWith("photomontage", StringComparison.OrdinalIgnoreCase)
+                    );
                     if (photomontage != null)
                         files = files.Concat(ExtractFilenames(photomontage.Content));
                 }
