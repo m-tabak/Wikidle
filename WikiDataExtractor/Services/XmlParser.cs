@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Xml;
 using WikiDataExtractor.Wikipedia;
 
-namespace WikiDataExtractor.Data
+namespace WikiDataExtractor.Services
 {
     internal class XmlParser
     {
@@ -15,7 +15,7 @@ namespace WikiDataExtractor.Data
         /// </summary>
         /// <param name="stream">A stream containing the XML text.</param>
         /// <returns>The node's name and value respectively.</returns>
-        internal async static IAsyncEnumerable<(string, string)> ReadTextNodesAsync(Stream stream)
+        internal async IAsyncEnumerable<(string, string)> ReadTextNodesAsync(Stream stream)
         {
             XmlReaderSettings settings = new XmlReaderSettings();
             settings.Async = true;
